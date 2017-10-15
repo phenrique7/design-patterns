@@ -1,14 +1,16 @@
 package BridgePattern;
 
-public class Markers implements PrintTypeImplementor{
-    private char marker;
+import java.util.ArrayList;
 
-    public Markers(char marker){
+public class Markers implements PrintTypeImplementor{
+    private String marker;
+
+    public Markers(String marker){
         this.marker = marker;
     }
 
     @Override
-    public void print() {
-
+    public void print(ArrayList<String> lista){
+        lista.forEach(str -> System.out.println(marker + " " + str));
     }
 }
