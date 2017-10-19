@@ -4,7 +4,7 @@ public class Closed implements SubjectState{
 
     @Override
     public SubjectState studentEnrollsSubject(int totalStudents, int maxNumberVacancies) {
-        return null;
+        return new Closed();
     }
 
     @Override

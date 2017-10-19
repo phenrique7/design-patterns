@@ -9,20 +9,17 @@ public class Offered implements SubjectState{
 
     @Override
     public SubjectState studentLeavesSubject(int totalStudents){
-        return null;
+        return new Offered();
     }
 
     @Override
     public SubjectState cancelsSubject(int totalStudents){
-        if(totalStudents == 0) {
-            return new Canceled();
-        }
-        return null;
+        return new Canceled();
     }
 
     @Override
     public SubjectState offerSubject(){
-        return null;
+        return new Offered();
     }
 
 }

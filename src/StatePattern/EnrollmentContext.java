@@ -13,16 +13,28 @@ public class EnrollmentContext{
         this.subject = subject;
     }
 
-    public void studentEnrolls(){
+    public void studentEnrollsSubject(){
         state = state.studentEnrollsSubject(totalStudents, maxNumberVacancies);
-        if(state != null) {
+        if(state instanceof Closed){
+            System.out.println("There are no vacancies in the subject.");
+        }
+        else if(state instanceof Canceled){
+            System.out.println("Subject is not offered.");
+        }
+        else {
             totalStudents++;
         }
     }
 
     public void studentLeavesSubject(){
         state = state.studentLeavesSubject(totalStudents);
-        if(state != null) {
+        if(state instanceof Offered) {
+            System.out.println("There are no students in the subject.");
+        }
+        else if(state instanceof Canceled){
+            System.out.println("The subject is canceled.");
+        }
+        else {
             totalStudents--;
         }
     }
@@ -36,7 +48,10 @@ public class EnrollmentContext{
 
     public void offerSubject(){
         state = state.offerSubject();
-        if(!(state instanceof Offered)) {
+        if(state instanceof Offered) {
+            System.out.println("Subject is already being offered or is already open.");
+        }
+        else {
             System.out.println("Subject can not be offered.");
         }
     }

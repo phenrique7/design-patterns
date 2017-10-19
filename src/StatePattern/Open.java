@@ -15,7 +15,7 @@ public class Open implements SubjectState{
         if(totalStudents == 1){
             return new Offered();
         }
-        return null;
+        return new Open();
     }
 
     @Override
@@ -25,7 +25,7 @@ public class Open implements SubjectState{
 
     @Override
     public SubjectState offerSubject(){
-        return null;
+        return new Open();
     }
 
 }

@@ -9,12 +9,12 @@ public class Canceled implements SubjectState{
 
     @Override
     public SubjectState studentLeavesSubject(int totalStudents) {
-        return null;
+        return new Canceled();
     }
 
     @Override
     public SubjectState cancelsSubject(int totalStudents) {
-        return null;
+        return new Canceled();
     }
 
     @Override
