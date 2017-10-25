@@ -11,17 +11,24 @@ public class EnrollmentContext{
         totalStudents = 0;
         this.maxNumberVacancies = maxNumberVacancies;
         this.subject = subject;
+        System.out.println("Subject offered.");
     }
 
     public void studentEnrollsSubject(){
+        SubjectState statePrevious = state;
         state = state.studentEnrollsSubject(totalStudents, maxNumberVacancies);
-        if(state instanceof Closed){
-            System.out.println("There are no vacancies in the subject.");
+        if(statePrevious instanceof Closed && state instanceof Closed){
+            System.out.println("Subject closed. There are no more vacancies in the subject.");
+        }
+        else if(statePrevious instanceof Open && state instanceof Closed){
+            System.out.println("Student enrolled in the subject. Subject closed.");
+            totalStudents++;
         }
         else if(state instanceof Canceled){
-            System.out.println("Subject is not offered.");
+            System.out.println("Subject is canceled.");
         }
         else {
+            System.out.println("Student enrolled in the subject. Subject open.");
             totalStudents++;
         }
     }
@@ -29,12 +36,14 @@ public class EnrollmentContext{
     public void studentLeavesSubject(){
         state = state.studentLeavesSubject(totalStudents);
         if(state instanceof Offered) {
-            System.out.println("There are no students in the subject.");
+            System.out.println("Student leaves the subject. Subject offered.");
+            totalStudents--;
         }
         else if(state instanceof Canceled){
             System.out.println("The subject is canceled.");
         }
         else {
+            System.out.println("Student leaves the subject. Subject open.");
             totalStudents--;
         }
     }
@@ -44,14 +53,22 @@ public class EnrollmentContext{
         if(!(state instanceof Canceled)) {
             System.out.println("Subject can not be canceled.");
         }
+        else{
+            System.out.println("Subject canceled.");
+            totalStudents = 0;
+        }
     }
 
     public void offerSubject(){
+        SubjectState statePrevious = state;
         state = state.offerSubject();
-        if(state instanceof Offered) {
+        if(statePrevious instanceof Offered && state instanceof Offered) {
             System.out.println("Subject is already being offered or is already open.");
         }
-        else {
+        else if(state instanceof Offered){
+            System.out.println("Subject offered.");
+        }
+        else{
             System.out.println("Subject can not be offered.");
         }
     }

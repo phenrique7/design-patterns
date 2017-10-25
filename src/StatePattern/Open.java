@@ -4,7 +4,7 @@ public class Open implements SubjectState{
 
     @Override
     public SubjectState studentEnrollsSubject(int totalStudents, int maxNumberVacancies){
-        if(totalStudents == maxNumberVacancies){
+        if(totalStudents + 1 == maxNumberVacancies){
             return new Closed();
         }
         return new Open();
