@@ -9,8 +9,7 @@ public class ToLowerCase extends StringTransformer{
 
     @Override
     public void print(){
-        System.out.print("Lowercase string: " + string);
-        System.out.println();
+        System.out.print("Lowercase string: " + string + "\n");
     }
 
 }

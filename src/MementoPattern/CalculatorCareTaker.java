@@ -17,6 +17,8 @@ public class CalculatorCareTaker {
         if(states.empty()){
             return new CalculatorMemento("");
         }
-        return states.pop();
+        CalculatorMemento state = states.peek();
+        states.pop();
+        return state;
     }
 }

@@ -15,14 +15,18 @@ public class CalculatorOriginator{
         String[] mementos = splitExpression(expression);
         for(String memento : mementos){
             this.expression += memento;
-            if(!this.expression.equals(expression)){
-                careTaker.addMemento(new CalculatorMemento(this.expression));
-            }
+            careTaker.addMemento(new CalculatorMemento(this.expression));
         }
     }
 
     public void undoOperation(){
-        expression = careTaker.getLastMemento().getState();
+        String previousState = careTaker.getLastMemento().getState();
+        if(previousState.equals(expression)) {
+            expression = careTaker.getLastMemento().getState();
+        }
+        else{
+            expression = previousState;
+        }
     }
 
     public void showExpression(){
