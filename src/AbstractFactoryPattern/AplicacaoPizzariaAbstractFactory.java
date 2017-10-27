@@ -5,7 +5,7 @@ import java.text.ParseException;
 public class AplicacaoPizzariaAbstractFactory {
     public static void main(String[] args){
         try {
-            Pizzaria pizzaria = new Pizzaria("18/10/2017");
+            Pizzaria pizzaria = new Pizzaria("27/10/2017");
             Pizza pizza1 = pizzaria.recebePedido("pizza calabresa");
             Pizza pizza2 = pizzaria.recebePedido("pizza presunto");
             if(pizza1!=null)System.out.println(pizza1.getIngredientes());

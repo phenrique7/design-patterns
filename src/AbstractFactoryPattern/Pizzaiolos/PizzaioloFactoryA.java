@@ -13,7 +13,7 @@ public class PizzaioloFactoryA implements PizzaioloAbstractFactory {
 
     @Override
     public Pizza makePizzaPresunto() {
-        System.out.println("Não sabe fazer.");
+        System.out.println("Não sabe fazer pizza de presunto.");
         return null;
     }
 }

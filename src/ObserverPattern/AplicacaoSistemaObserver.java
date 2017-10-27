@@ -4,7 +4,7 @@ public class AplicacaoSistemaObserver {
     public static void main(String[] args){
         Sensores sensores = new Sensores();
         SistemaDeAlarmeObserver s = new SistemaDeAlarmeObserver(sensores,"Rua das Camelias,1245");
-        CiaSeguros seguro = new CiaSeguros(s);
+        CiaSegurosObserver seguro = new CiaSegurosObserver(s);
         DelegaciaObserver delegacia = new DelegaciaObserver(s);
         sensores.ativarSensor(IDSensores.Sensor1andar);
         sensores.desativarSensor(IDSensores.Sensor1andar);

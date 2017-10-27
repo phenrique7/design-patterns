@@ -1,9 +1,9 @@
 package ObserverPattern;
 
-public class CiaSeguros implements Observer{
+public class CiaSegurosObserver implements Observer{
     SistemaDeAlarmeObserver sistema;
 
-    public CiaSeguros(SistemaDeAlarmeObserver s){
+    public CiaSegurosObserver(SistemaDeAlarmeObserver s){
         sistema=s;
         sistema.Attach(this);
     }

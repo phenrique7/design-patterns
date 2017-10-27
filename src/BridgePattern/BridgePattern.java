@@ -5,6 +5,8 @@ public class BridgePattern{
     public static void main(String[] args){
         Lista lista;
 
+        System.out.println("------------------ Listas ordenadas ------------------\n");
+
         lista = addData(new OrderedList(new Letters()));
         lista.print();
         System.out.println();
@@ -16,6 +18,8 @@ public class BridgePattern{
         lista = addData(new OrderedList(new Markers("-")));
         lista.print();
         System.out.println();
+
+        System.out.println("------------------ Listas não ordenadas ------------------\n");
 
         lista = addData(new UnorderedList(new Letters()));
         lista.print();
