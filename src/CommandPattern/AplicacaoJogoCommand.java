@@ -6,11 +6,12 @@ import CommandPattern.Games.Corrida;
 import CommandPattern.Games.Futebol;
 import CommandPattern.Games.Luta;
 
-public class AplicaçãoJogoCommand {
+public class AplicacaoJogoCommand {
     public static void main(String[] args){
         GameReceiver game1= new Corrida();
         GameReceiver game2= new Futebol();
         GameReceiver game3= new Luta();
+
         ControleInvoker controle1 = new ControleInvoker();
         ControleInvoker controle2 = new ControleInvoker();
         ControleInvoker controle3 = new ControleInvoker();

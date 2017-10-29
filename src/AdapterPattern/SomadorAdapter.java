@@ -17,6 +17,7 @@ public class SomadorAdapter implements SomadorEsperadoTarget{
             lista.add(vetor[i]);
         }
         int resultado = somadorExistente.somaLista(lista);
+        lista.clear();
         return resultado;
     }
 }

@@ -6,7 +6,9 @@ public class AtendenteDirector {
 
     public AtendenteDirector(LancheBuilder lancheBuilder){
         this.lancheBuilder = lancheBuilder;
-        pedido = new Pedido(lancheBuilder.getClass().toString().split("[.]")[1]);
+        String nomeRestaurante = lancheBuilder.getClass().toString().split("[.]")[1];
+        nomeRestaurante = nomeRestaurante.substring("Funcionario".length(), nomeRestaurante.length());
+        pedido = new Pedido(nomeRestaurante);
     }
 
     public LancheProduct montaLanche(){

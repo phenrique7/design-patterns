@@ -1,20 +1,20 @@
 package BuilderPattern;
 
-public class Bobs extends LancheBuilder{
+public class FuncionarioBurgerKing extends LancheBuilder{
 
-    public Bobs() {
+    public FuncionarioBurgerKing() {
         super();
     }
 
     @Override
     public String buildSanduiche() {
-        lanche.setSanduiche("hambúrger");
+        lanche.setSanduiche("cheeseburger");
         return lanche.getSanduiche();
     }
 
     @Override
     public String buildBatata() {
-        lanche.setBatata("pequena");
+        lanche.setBatata("grande");
         return lanche.getBatata();
     }
 
@@ -26,7 +26,7 @@ public class Bobs extends LancheBuilder{
 
     @Override
     public String buildRefrigerante() {
-        lanche.setRefrigerante("guaraná");
+        lanche.setRefrigerante("coca");
         return lanche.getRefrigerante();
     }
 
